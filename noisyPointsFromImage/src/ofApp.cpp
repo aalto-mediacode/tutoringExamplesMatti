@@ -53,7 +53,7 @@ void ofApp::setup(){
     
     //setup the gui
     gui.setup(); // most of the time you don't need a name
-    gui.add(pointSize.setup("GL point size", 5.0, 1.0, 15.0));
+    gui.add(pointSize.setup("GL point size", 8.0, 1.0, 15.0));
     gui.add(displacementScale.setup("displacement", 1.0, 0.1, 20.0));
     gui.add(timeScale.setup("time scale", 1.0, 0.1, 10.0));
     ofxGuiSetTextColor(255);
