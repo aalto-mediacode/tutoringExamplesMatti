@@ -27,6 +27,6 @@ project.xcworkspace
 
 .svn/
 obj/
-bin/
+#bin/
 build/
-!data/
+#!data/
