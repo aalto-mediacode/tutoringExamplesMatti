@@ -7,7 +7,7 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     
     // load image
-    image.load("stars.png");
+    image.load("starry.jpg");
     
     // mesh
     mesh.setMode(OF_PRIMITIVE_POINTS);
@@ -55,9 +55,10 @@ void ofApp::setup(){
     // ofMesh has a method called getCentroid() that will
     // find the average location over all of our vertices
     //    http://en.wikipedia.org/wiki/Centroid
-    meshCentroid = mesh.getCentroid();
-
-    // Now that we know our centroid, we need to know the polar coordinates
+    //meshCentroid = mesh.getCentroid();
+    meshCentroid = { 650.0,650.0,0.0 };
+    ofLogNotice() << meshCentroid.x << " , " << meshCentroid.y;
+        // Now that we know our centroid, we need to know the polar coordinates
     // (distance and angle) of each vertex relative to that center point.
     // We've found the distance between points before, but what about the angle?
     // This is where atan2 comes in.  atan2(y, x) takes an x and y value and returns
@@ -98,22 +99,27 @@ void ofApp::update(){
     }else{
         orbiting=false;
     }
-    
+    //meshCentroid = {mouseX,ofGetHeight()-mouseY,0.0};
     for (int i=0; i<numVerts; ++i) {
+       
         ofVec3f vert = mesh.getVertex(i);
-        
+        ofVec3f vert2 = meshCopy.getVertex(i);
         if (orbiting) {
+
+           // float distance = vert.distance(meshCentroid);
+           // float angle = atan2(vert2.y- meshCentroid.x, vert2.x- meshCentroid.y);
+ 
             float distance = distances[i];
             float angle = angles[i];
             
             
             // Lets adjust the speed of the orbits such that things that are closer to
             // the center rotate faster than things that are more distant
-            float speed = ofMap(distance, 0, image.getWidth()/2, 1.0, 0.1, true);
+            float speed = ofMap(distance, 0, 1200, 2.0, 0.1, true);
             
             // To find the angular rotation of our vertex, we use the current time and
             // the starting angular rotation
-            float rotatedAngle = orbitTimer * speed + angle;
+            float rotatedAngle = -orbitTimer * speed + angle;
             
             // Remember that our distances are calculated relative to the centroid
             // of the mesh, so we need to shift everything back to screen
