@@ -1,33 +1,86 @@
-# don't push project files
-*.cbp
-*.sln
-*.vcx*
-*.workspace*
-config.make
-Makefile
-*.xcodeproj
-*.plist
-*.xcconfig
-*.suo
+###########################
+# ignore generated binaries
+# but not the data folder
+###########################
 
+*/bin/*
+!*/bin/data/
+
+#########
+# general
+#########
+
+*/[Bb]uild/
+*/[Oo]bj/
+*.o
+*/[Dd]ebug*/
+*/[Rr]elease*/
+*.mode*
+*.app/
+*.pyc
+.svn/
+*.log
+
+########################
+# IDE files which should
+# be ignored
+########################
+
+# XCode
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+# XCode 4
+xcuserdata
+*.xcworkspace
+
+# Code::Blocks
 *.depend
 *.layout
-*.mode*v3
-*.pbxuser
-*.app*
-*.DS_*
-*.xcworkspacedata
-xcuserdata/
-project.xcworkspace
 
-*.opensdf
+# Visual Studio
 *.sdf
+*.opensdf
 *.suo
-*.ipch
+*.pdb
+*.ilk
+*.aps
+*.sln
+*.VC.db
+ipch/
 
-.svn/
-obj/
-bin/
-build/
-!data/
-!*/bin/data/
+# Eclipse
+.metadata
+local.properties
+.externalToolBuilders
+
+##################
+# operating system
+##################
+
+# Linux
+*~
+# KDE
+.directory
+.AppleDouble
+
+# OSX
+.DS_Store
+*.swp
+*~.nib
+# Thumbnails
+._*
+
+# Windows
+# Image file caches
+Thumbs.db
+# Folder config file
+Desktop.ini
+
+# Android
+.csettings
