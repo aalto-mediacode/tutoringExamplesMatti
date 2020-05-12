@@ -44,6 +44,7 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	ofBackgroundGradient(ofColor::gray, ofColor::black);
 	ofDrawCircle(pos, 30);
 	//ofDrawRectangle(pos, 1, 1);
 }
