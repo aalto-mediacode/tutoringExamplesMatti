@@ -29,7 +29,7 @@ void ofApp::update() {
 	glm::normalize(target);
 
 	//scale the vector
-	target *= 0.001;
+	target *= 0.005;
 
 	acc = target;
 
