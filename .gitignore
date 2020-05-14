@@ -38,6 +38,13 @@
 # XCode 4
 xcuserdata
 *.xcworkspace
+*.xcscheme
+*.pbxproj
+*.plist
+*.xcconfig
+
+Makefile
+*.make
 
 # Code::Blocks
 *.depend
